@@ -17,7 +17,6 @@ namespace Tokens\Payments\Code\Controllers\Admin;
 
 defined('KAZIST') or exit('Not Kazist Framework');
 
-use Tokens\Payments\Code\Models\PaymentsModel;
 use Payments\Payments\Code\Controllers\PaymentsController AS BasePaymentsController;
 
 class TokensController extends BasePaymentsController {

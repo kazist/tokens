@@ -11,7 +11,7 @@
                                 "items": [
                                     {
                                         "group": {
-                                            "name": "Tokens Detail",
+                                            "name": "Tokens Payments Detail",
                                             "unique_name": "tokens_detail",
                                             "has_title": null,
                                             "user_right": null,
