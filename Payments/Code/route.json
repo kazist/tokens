@@ -1,0 +1,113 @@
+{
+    "frontend": [{
+            "title": "Tokens Payments Return",
+            "description": "Tokens Payments Return.",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\TokensController::returnAction",
+            "unique_name": "tokens.payments.return",
+            "route": "tokens/payments/return",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "tokens, return",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0
+
+        }, {
+            "title": "Tokens Payments Cancelled",
+            "description": "Tokens Payments Cancelled",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\TokensController::cancelAction",
+            "unique_name": "tokens.payments.cancel",
+            "route": "tokens/payments/cancel",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "tokens,cancel",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0
+        }, {
+            "title": "Tokens Payments Notify",
+            "description": "Tokens Payments Notify",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\TokensController::notifyAction",
+            "unique_name": "tokens.payments.notify",
+            "route": "tokens/payments/notify",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "tokens, notify",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0
+        }],
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::taskAction",
+            "unique_name": "admin.tokens.payments.task",
+            "route": "admin/tokens/payments/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "tokens, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Tokens Payments List",
+            "description": "Management of Tokens Payments.",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.tokens.payments",
+            "route": "admin/tokens/payments",
+            "arguments": "",
+            "keywords": "cron, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Tokens Payments Detail: {{ item.name }}",
+            "description": "Tokens Payments Detail: {{ item.name }}",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::detailAction",
+            "unique_name": "admin.tokens.payments.detail",
+            "route": "admin/tokens/payments/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "cron, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Tokens Payments Delete: {{ item.name }}",
+            "description": "Tokens Payments Delete: {{ item.name }}",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::deleteAction",
+            "unique_name": "admin.tokens.payments.delete",
+            "route": "admin/tokens/payments/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "cron, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }]
+} 	
