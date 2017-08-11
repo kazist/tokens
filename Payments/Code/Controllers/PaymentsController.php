@@ -23,6 +23,7 @@ use Payments\Payments\Code\Controllers\PaymentsController AS BasePaymentsControl
 class TokensController extends BasePaymentsController {
 
     public function notifyAction() {
+        
         $payment_id = $this->request->query->get('payment_id');
 
         $this->model = new PaymentsModel();
