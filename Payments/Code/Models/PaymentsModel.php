@@ -11,7 +11,7 @@ namespace Tokens\Payments\Code\Models;
 defined('KAZIST') or exit('Not Kazist Framework');
 
 use Kazist\KazistFactory;
-use Tokens\Payments\Code\Models\PaymentsModel AS BasePaymentsModel;
+use Payments\Payments\Code\Models\PaymentsModel AS BasePaymentsModel;
 use Kazist\Service\Database\Query;
 
 /**
