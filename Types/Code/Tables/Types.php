@@ -1,17 +1,17 @@
 <?php
 
-namespace Tokens\Payments\Code\Tables;
+namespace Tokens\Types\Code\Tables;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tokens
+ * Types
  *
- * @ORM\Table(name="tokens_payments")
+ * @ORM\Table(name="tokens_types")
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Payments extends \Kazist\Table\BaseTable {
+class Types extends \Kazist\Table\BaseTable {
 
     /**
      * @var integer
@@ -23,25 +23,25 @@ class Payments extends \Kazist\Table\BaseTable {
     protected $id;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="user_id", type="integer", length=11)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
-    protected $user_id;
+    protected $title;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="amount", type="integer", length=11)
+     * @ORM\Column(name="amount", type="integer", length=11, nullable=false)
      */
     protected $amount;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="token", type="string", length=255)
+     * @ORM\Column(name="limit_amount", type="integer", length=11, nullable=true)
      */
-    protected $token;
+    protected $limit_amount;
 
     /**
      * @var integer
@@ -81,31 +81,31 @@ class Payments extends \Kazist\Table\BaseTable {
     }
 
     /**
-     * Set user_id
+     * Set title
      *
-     * @param integer $userId
-     * @return Tokens
+     * @param string $title
+     * @return Types
      */
-    public function setUserId($userId) {
-        $this->user_id = $userId;
+    public function setTitle($title) {
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get user_id
+     * Get title
      *
-     * @return integer 
+     * @return string 
      */
-    public function getUserId() {
-        return $this->user_id;
+    public function getTitle() {
+        return $this->title;
     }
 
     /**
      * Set amount
      *
      * @param integer $amount
-     * @return Tokens
+     * @return Types
      */
     public function setAmount($amount) {
         $this->amount = $amount;
@@ -123,24 +123,24 @@ class Payments extends \Kazist\Table\BaseTable {
     }
 
     /**
-     * Set token
+     * Set limit_amount
      *
-     * @param string $token
-     * @return Tokens
+     * @param integer $limitAmount
+     * @return Types
      */
-    public function setToken($token) {
-        $this->token = $token;
+    public function setLimitAmount($limitAmount) {
+        $this->limit_amount = $limitAmount;
 
         return $this;
     }
 
     /**
-     * Get token
+     * Get limit_amount
      *
-     * @return string 
+     * @return integer 
      */
-    public function getToken() {
-        return $this->token;
+    public function getLimitAmount() {
+        return $this->limit_amount;
     }
 
     /**

@@ -8,7 +8,7 @@
         "can_withdraw": "0",
         "can_payment": "1",
         "can_transfer": "0",
-        "payment_instruction": "To complete your Payment click the Tokens button below and make a payment of {{ payment.amount }} USD. <br> {{ payment_form }}",
+        "payment_instruction": "To complete your Payment click the Tokens button below and make a payment of <b>{{ gateway.total_amount }} USD</b>. <br> {{ payment_form }}",
         "transfer_instruction": "",
         "withdraw_instruction": "",
         "withdraw_file_prefix": "",
@@ -17,7 +17,7 @@
         "file_type": "csv",
         "file_limit": "2000",
         "form_path": "Tokens/Payments/Code/gateways",
-        "url": "{{ web_base }}/finance/payments/tokens/notify?payment_id={{ payment.id}}",
+        "url": "{{ web_base }}/tokens/tokens/notify?payment_id={{ payment.id}}",
         "published": "1"
     }]
 

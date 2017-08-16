@@ -7,22 +7,40 @@
                         "columns": [
                             {
                                 "name": "",
-                                "class_name": "col-sm-12",
+                                "class_name": "col-sm-6",
                                 "items": [
                                     {
                                         "group": {
-                                            "name": "Tokens Payments Detail",
-                                            "unique_name": "tokens_detail",
+                                            "name": "type Detail",
+                                            "unique_name": "type_detail",
                                             "has_title": null,
                                             "user_right": null,
                                             "hide_on_new": null,
                                             "fields": [
-                                                "id",
-                                                "created_by",
-                                                "date_created",
-                                                "user_id",
+                                                "title",
                                                 "amount",
-                                                "token"
+                                                "limit_amount"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "",
+                                "class_name": "col-sm-6",
+                                "items": [
+                                    {
+                                        "group": {
+                                            "name": "Modification Detail",
+                                            "unique_name": "modification_detail",
+                                            "has_title": 1,
+                                            "user_right": null,
+                                            "hide_on_new": null,
+                                            "fields": [
+                                                "date_modified",
+                                                "modified_by",
+                                                "date_created",
+                                                "created_by"
                                             ]
                                         }
                                     }
@@ -33,18 +51,21 @@
                 ]
             },
             "ommitted": [
-                "modified_by",
-                "date_modified"
+                "id"
             ]
         },
         "table": {
             "fields": [
-                "id",
+                "title",
+                "amount",
+                "limit_amount",
                 "created_by",
                 "date_created"
             ],
             "has_label": [
-                "id",
+                "title",
+                "amount",
+                "limit_amount",
                 "created_by",
                 "date_created"
             ]
@@ -62,12 +83,12 @@
     ],
     "fields": [
         {
-            "dropdown_filter": "1",
+            "dropdown_filter": "0",
             "nullable": "0",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
-            "view_side": "",
+            "view_side": "both",
             "index": "",
             "id_name": "",
             "class_name": "",
@@ -81,7 +102,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -91,14 +111,18 @@
             }
         },
         {
-            "name": "user_id",
+            "dropdown_filter": "1",
+            "nullable": "0",
+            "name": "title",
             "html_type": "text",
-            "mysql_type": "int",
-            "view_side": "",
+            "mysql_type": "varchar",
+            "view_side": "both",
             "index": "",
-            "size": "",
-            "readonly": "0",
+            "id_name": "",
+            "class_name": "",
             "default_value": "",
+            "size": "",
+            "readonly": "",
             "format_value": "",
             "parameters": {
                 "general": [
@@ -106,7 +130,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -116,14 +139,18 @@
             }
         },
         {
+            "dropdown_filter": "1",
+            "nullable": "0",
             "name": "amount",
             "html_type": "text",
             "mysql_type": "int",
-            "view_side": "",
+            "view_side": "both",
             "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
             "size": "",
             "readonly": "0",
-            "default_value": "",
             "format_value": "",
             "parameters": {
                 "general": [
@@ -131,7 +158,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -141,14 +167,18 @@
             }
         },
         {
-            "name": "token",
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "limit_amount",
             "html_type": "text",
-            "mysql_type": "varchar",
-            "view_side": "",
+            "mysql_type": "int",
+            "view_side": "both",
             "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
             "size": "",
             "readonly": "0",
-            "default_value": "",
             "format_value": "",
             "parameters": {
                 "general": [
@@ -156,7 +186,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -171,7 +200,7 @@
             "name": "created_by",
             "html_type": "text",
             "mysql_type": "int",
-            "view_side": "",
+            "view_side": "both",
             "index": "",
             "id_name": "",
             "class_name": "",
@@ -185,7 +214,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -200,7 +228,7 @@
             "name": "date_created",
             "html_type": "text",
             "mysql_type": "datetime",
-            "view_side": "",
+            "view_side": "both",
             "index": "",
             "id_name": "",
             "class_name": "",
@@ -214,7 +242,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -229,7 +256,7 @@
             "name": "modified_by",
             "html_type": "text",
             "mysql_type": "int",
-            "view_side": "",
+            "view_side": "both",
             "index": "",
             "id_name": "",
             "class_name": "",
@@ -243,7 +270,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -258,7 +284,7 @@
             "name": "date_modified",
             "html_type": "text",
             "mysql_type": "datetime",
-            "view_side": "",
+            "view_side": "both",
             "index": "",
             "id_name": "",
             "class_name": "",
@@ -272,7 +298,6 @@
                 "source": [
                 ],
                 "save": {
-                    "view_side": "both",
                     "index": ""
                 },
                 "media": [
@@ -283,8 +308,8 @@
         }
     ],
     "primarykey": "id",
-    "table_name": "tokens_payments",
-    "table_alias": "fpt",
+    "table_name": "tokens_types",
+    "table_alias": "ftt",
     "foreignkey": "",
     "renamedfields": "",
     "main_fields": [
@@ -296,23 +321,23 @@
     "email_on_new": "0",
     "email_on_edit": "0",
     "email_on_delete": "0",
-    "subset_name": "tokens",
+    "subset_name": "types",
     "right_field": "",
     "query": {
         "from": {
-            "table": "Tokens\\Payments\\Code\\Tables\\Tokens",
-            "alias": "fpt",
-            "name": "#__tokens_payments"
+            "table": "Tokens\\Types\\Code\\Tables\\Types",
+            "alias": "ftt",
+            "name": "#__tokens_types"
         },
         "select": [
-            "fpt.id",
-            "fpt.user_id",
-            "fpt.amount",
-            "fpt.token",
-            "fpt.created_by",
-            "fpt.date_created",
-            "fpt.modified_by",
-            "fpt.date_modified"
+            "ftt.id",
+            "ftt.title",
+            "ftt.amount",
+            "ftt.limit_amount",
+            "ftt.created_by",
+            "ftt.date_created",
+            "ftt.modified_by",
+            "ftt.date_modified"
         ]
     }
 }

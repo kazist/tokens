@@ -1,23 +1,26 @@
-Tokens\Payments\Code\Tables\Payments:
-  table: tokens_payments
+Tokens\Types\Code\Tables\Types:
+  table: tokens_types
   type: entity
   id:
     id:
       type: integer
       generator: { strategy: AUTO }
   fields:
-    user_id:
-      name: user_id
-      type: integer
-      length: 11
+    title:
+      name: title
+      type: string
+      length: 255
+      nullable: false
     amount:
       name: amount
       type: integer
       length: 11
-    token:
-      name: token
-      type: string
-      length: 255
+      nullable: false
+    limit_amount:
+      name: limit_amount
+      type: integer
+      length: 11
+      nullable: true
     created_by:
       name: created_by
       type: integer

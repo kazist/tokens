@@ -1,0 +1,17 @@
+{
+    "parent": "payments",
+    "menulist": [{
+
+            "title": "Tokens",
+            "alias": "admin_tokens_tokens",
+            "url": "admin/tokens/tokens",
+            "icon": "fa fa-money",
+            "children": [ {
+            "title": "Tokens Type",
+            "alias": "admin_tokens_types",
+            "url": "admin/tokens/types",
+            "icon": "fa fa-money",
+            "children": []
+        }]
+        }]
+}

@@ -2,7 +2,7 @@
     "frontend": [{
             "title": "Tokens Payments Return",
             "description": "Tokens Payments Return.",
-            "controller": "Tokens\\Payments\\Code\\Controllers\\TokensController::returnAction",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\PaymentsController::returnAction",
             "unique_name": "tokens.payments.return",
             "route": "tokens/payments/return",
             "permissions": "can_view, can_viewown",
@@ -15,7 +15,7 @@
         }, {
             "title": "Tokens Payments Cancelled",
             "description": "Tokens Payments Cancelled",
-            "controller": "Tokens\\Payments\\Code\\Controllers\\TokensController::cancelAction",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\PaymentsController::cancelAction",
             "unique_name": "tokens.payments.cancel",
             "route": "tokens/payments/cancel",
             "permissions": "can_view, can_viewown",
@@ -29,7 +29,7 @@
         }, {
             "title": "Tokens Payments Notify",
             "description": "Tokens Payments Notify",
-            "controller": "Tokens\\Payments\\Code\\Controllers\\TokensController::notifyAction",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\PaymentsController::notifyAction",
             "unique_name": "tokens.payments.notify",
             "route": "tokens/payments/notify",
             "permissions": "can_view, can_viewown",
@@ -44,7 +44,7 @@
     "backend": [{
             "title": "General Tasks",
             "description": "General Tasks.",
-            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::taskAction",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\PaymentsController::taskAction",
             "unique_name": "admin.tokens.payments.task",
             "route": "admin/tokens/payments/task",
             "permissions": "can_add, can_write, can_writeown",
@@ -60,7 +60,7 @@
         }, {
             "title": "Tokens Payments List",
             "description": "Management of Tokens Payments.",
-            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::indexAction",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\PaymentsController::indexAction",
             "permissions": "can_view, can_viewown",
             "unique_name": "admin.tokens.payments",
             "route": "admin/tokens/payments",
@@ -76,7 +76,7 @@
         }, {
             "title": "Tokens Payments Detail: {{ item.name }}",
             "description": "Tokens Payments Detail: {{ item.name }}",
-            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::detailAction",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\PaymentsController::detailAction",
             "unique_name": "admin.tokens.payments.detail",
             "route": "admin/tokens/payments/detail/{id}",
             "permissions": "can_view, can_viewown",
@@ -94,7 +94,7 @@
         }, {
             "title": "Tokens Payments Delete: {{ item.name }}",
             "description": "Tokens Payments Delete: {{ item.name }}",
-            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\TokensController::deleteAction",
+            "controller": "Tokens\\Payments\\Code\\Controllers\\Admin\\PaymentsController::deleteAction",
             "unique_name": "admin.tokens.payments.delete",
             "route": "admin/tokens/payments/delete/{id}",
             "permissions": "can_delete, can_deleteown",

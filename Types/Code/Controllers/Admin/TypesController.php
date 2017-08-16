@@ -8,17 +8,17 @@
  */
 
 /**
- * Description of PaymentsController
+ * Description of TypesController
  *
  * @author sbc
  */
 
-namespace Tokens\Payments\Code\Controllers\Admin;
+namespace Tokens\Types\Code\Controllers\Admin;
 
 defined('KAZIST') or exit('Not Kazist Framework');
 
-use Payments\Payments\Code\Controllers\PaymentsController AS BasePaymentsController;
+use Kazist\Controller\BaseController;
 
-class PaymentsController extends BasePaymentsController {
+class TypesController extends BaseController {
     
 }

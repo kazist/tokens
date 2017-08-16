@@ -8,7 +8,7 @@
  */
 
 /**
- * Description of TokensController
+ * Description of PaymentsController
  *
  * @author sbc
  */
@@ -20,7 +20,7 @@ defined('KAZIST') or exit('Not Kazist Framework');
 use Tokens\Payments\Code\Models\PaymentsModel;
 use Payments\Payments\Code\Controllers\PaymentsController AS BasePaymentsController;
 
-class TokensController extends BasePaymentsController {
+class PaymentsController extends BasePaymentsController {
 
     public function notifyAction() {
         

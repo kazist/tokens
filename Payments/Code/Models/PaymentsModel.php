@@ -21,6 +21,12 @@ use Kazist\Service\Database\Query;
  */
 class PaymentsModel extends BasePaymentsModel {
 
+    public function appendSearchQuery($query) {
+
+        $this->ingore_search_query = true;
+        return parent:: appendSearchQuery($query);
+    }
+
     public function notificationTransaction($payment_id) {
 
         $this->completeTransaction($payment_id);
@@ -52,7 +58,7 @@ class PaymentsModel extends BasePaymentsModel {
 
         $token = $this->request->request->get('token');
 
-        $gateway = $this->getGatewayByName('token');
+        $gateway = $this->getGatewayByName('tokens');
 
         $token_obj = $this->getToken(trim($token));
         $payment = $this->getPaymentById($payment_id);
@@ -82,9 +88,24 @@ class PaymentsModel extends BasePaymentsModel {
             $is_valid = false;
         }
 
+        $this->saveTokenPayment($required_amount);
         $this->updateToken($token_obj);
 
         return $is_valid;
+    }
+
+    public function saveTokenPayment($amount) {
+        
+        $factory = new KazistFactory();
+        $user = $factory->getUser();
+        $token = $this->request->get('token');
+
+        $token_obj = new \stdClass();
+        $token_obj->token = $token;
+        $token_obj->user_id = $user->id;
+        $token_obj->amount = $amount;
+
+        $factory->saveRecord('#__tokens_payments', $token_obj);
     }
 
     public function updateToken($token_obj) {
@@ -96,7 +117,7 @@ class PaymentsModel extends BasePaymentsModel {
         $token_obj->date_used = date('Y-m-d H:i:s');
         $token_obj->used_by = $user->id;
 
-        $factory->saveRecord('#__tokens_payments', $token_obj);
+        $factory->saveRecord('#__tokens_tokens', $token_obj);
     }
 
     public function getToken($token) {
@@ -104,11 +125,11 @@ class PaymentsModel extends BasePaymentsModel {
 
 
         $query = new Query();
-        $query->select('ft.*, ftt.limit_amount');
-        $query->from('#__tokens_payments', 'ft');
-        $query->leftJoin('ft', '#__tokens_payments_types', 'ftt', 'ftt.id = ft.type_id');
-        $query->where('ft.token=:token');
-        $query->andWhere('(ft.used=0 OR ft.used IS NULL)');
+        $query->select('tp.*, tt.limit_amount');
+        $query->from('#__tokens_tokens', 'tp');
+        $query->leftJoin('tp', '#__tokens_types', 'tt', 'tt.id = tp.type_id');
+        $query->where('tp.token=:token');
+        $query->andWhere('(tp.used=0 OR tp.used IS NULL)');
         $query->setParameter('token', $token);
 
 

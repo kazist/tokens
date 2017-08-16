@@ -1,0 +1,14 @@
+{
+    "TokensPayments": {
+        "namespace": "Tokens\\Payments",
+        "controller": "PaymentsController"
+    },
+    "TokensTokens": {
+        "namespace": "Tokens\\Tokens",
+        "controller": "TokensController"
+    },
+    "TokensTypes": {
+        "namespace": "Tokens\\Types",
+        "controller": "TypesController"
+    }
+}
