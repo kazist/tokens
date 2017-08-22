@@ -16,7 +16,7 @@
         "file_type": "csv",
         "file_limit": "2000",
         "form_path": "Tokens/Payments/Code/gateways",
-        "url": "{{ web_base }}/tokens/tokens/notify?payment_id={{ payment.id}}",
+        "url": "{{ web_base }}/tokens/payments/notify?payment_id={{ payment.id}}",
         "published": "1"
     }]
 
