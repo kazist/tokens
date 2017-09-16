@@ -20,13 +20,21 @@
         </div>
         <div class="col-sm-3">
             <b>Used Date Range</b><br>
-            {{ forms.input(' search.date_used.start', 'datetime', search.date_used.start ) }}
-            {{ forms.input(' search.date_used.end', 'datetime', search.date_used.end ) }}
+            <div class="date_created_start_wrapper">
+                {{ forms.input(' search.date_used.start', 'datetime', search.date_used.start ) }}
+            </div>
+            <div class="date_created_end_wrapper">
+                {{ forms.input(' search.date_used.end', 'datetime', search.date_used.end ) }}
+            </div>
         </div>
         <div class="col-sm-3">
             <b>Created Date Range</b><br>
-            {{ forms.input(' search.date_created.start', 'datetime', search.date_created.start ) }}
-            {{ forms.input(' search.date_created.end', 'datetime', search.date_created.end ) }}
+            <div class="date_created_start_wrapper">
+                {{ forms.input(' search.date_created.start', 'datetime', search.date_created.start ) }}
+            </div>
+            <div class="date_created_end_wrapper">
+                {{ forms.input(' search.date_created.end', 'datetime', search.date_created.end ) }}
+            </div>
         </div>
         <div class="col-sm-2">
             <b></b><br>
@@ -34,7 +42,7 @@
             <button class="btn btn-default btn-sm" type="submit" name="clear" value="clear">Clear</button>
         </div>
     </div>
-        
+
     {{ forms.input('_token' ) }} 
 
 </form>
@@ -49,23 +57,13 @@
         padding:0 2px;
     }
 
-    .search_date_used_start{
-        width: 49% !important;
+    .date_created_start_wrapper{
+        width: 45% !important;
         float: left;
     }
 
-    .search_date_used_end{
-        width: 49% !important;
-        float: right;
-    }
-
-    .search_date_created_start{
-        width: 49% !important;
-        float: left;
-    }
-
-    .search_date_created_end{
-        width: 49% !important;
+    .date_created_end_wrapper{
+        width: 45% !important;
         float: right;
     }
 </style>
