@@ -108,7 +108,7 @@ class TokensModel extends BaseModel {
 
         $tmp_array = array();
         $factory = new KazistFactory();
-        $query = $factory->getQueryBuilder('#__tokens_types');
+        $query = $factory->getQueryBuilder('#__tokens_types', 'tt');
 
         $query->where('id=' . $id);
 
